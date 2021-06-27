@@ -1,0 +1,23 @@
+@bot.command()
+async def displayembed():
+  embed = discord.Embed(
+    title = 'Title',
+    description = 'This is a description',
+    colour = discord.Colour.blue()
+  )
+  embed.set_footer(text= 'this is a footer')
+  embed.set_image(url= 'https://media.discordapp.net/attachments/794406332026847237/857794304662962176/tumblr_mjrwhterLZ1qc3plfo1_500.gif')
+  embed.set_thumbnail('https://media.discordapp.net/attachments/794406332026847237/857794304662962176/tumblr_mjrwhterLZ1qc3plfo1_500.gif')
+  embed.set_author(name= 'Author Name', icon_url= 'https://media.discordapp.net/attachments/794406332026847237/857794304662962176/tumblr_mjrwhterLZ1qc3plfo1_500.gif')
+  embed.add_field(name='field name' , value= 'field value', inline= False)
+  embed.add_field(name='field name' , value= 'field value', inline= True)
+  embed.add_field(name='field name' , value= 'field value', inline= True)
+
+  await bot.say(embed=embed)
+
+  @bot.commmand(pass_context=True)
+async def clear(ctx, amount=100):
+  channel = ctx.message.channel
+  messages= []
+  async for message in bot.logs_fromf(channel, limit=int(amount)):
+    messages.append(messages)
